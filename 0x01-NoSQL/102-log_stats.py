@@ -11,4 +11,4 @@ if __name__ == "__main__":
             {"$group": {"_id": "$ip", "count": {"$count": {}}}},
             {"$sort": {"count": -1}}, {"$limit": 10}])
     for ip in ips:
-        print(f"\t{ip['_id']}: {ip['count']}")
+        print(f"\t{ip.get('_id')}: {ip.get('count')}")
